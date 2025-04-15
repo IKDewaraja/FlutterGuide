@@ -5,6 +5,12 @@ import 'package:workout_planner/pages/add_new_page.dart';
 import 'package:workout_planner/pages/favourite_page.dart';
 import 'package:workout_planner/pages/profile_page.dart';
 
+
+void main() {
+  runApp(const MyApp());
+}
+
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
