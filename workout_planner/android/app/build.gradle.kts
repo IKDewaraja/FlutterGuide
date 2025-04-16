@@ -6,6 +6,12 @@ plugins {
 }
 
 android {
+    ndkVersion = "27.0.12077973"
+   
+}
+
+
+android {
     namespace = "com.example.workout_planner"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
