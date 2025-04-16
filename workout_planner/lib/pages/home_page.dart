@@ -4,6 +4,7 @@ import 'package:workout_planner/constants/colors.dart';
 import 'package:workout_planner/constants/responsive.dart';
 import 'package:workout_planner/data/user_data.dart';
 import 'package:workout_planner/widgets/progress_card.dart';
+import 'package:workout_planner/widgets/exercice_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -58,6 +59,58 @@ class _HomePageState extends State<HomePage> {
                   progressValue: 0.4,
                   total: 100,
                 ),
+
+                        SizedBox(height: 20),
+
+                   Text("Todays's Activity",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  
+                    ),
+                      ),
+
+                      SizedBox(height: 10), 
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ExerciseCard(
+                            title: 'Warmup',
+                            description: 'see more...',
+                            imageUrl: 'assets/images/exercises/downward-facing.png',
+                            
+                          ),
+
+                              ExerciseCard(
+                            title: 'Equipment',
+                            description: 'see more...',
+                            imageUrl: 'assets/images/equipments/dumbbells2.png',
+                            
+                          ),
+                        ],
+                      ), 
+                      SizedBox(height: 13), 
+
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ExerciseCard(
+                            title: 'Exercise',
+                            description: 'see more...',
+                            imageUrl: 'assets/images/exercises/dragging.png',
+                            
+                          ),
+
+                              ExerciseCard(
+                            title: 'Stretching',
+                            description: 'see more...',
+                            imageUrl: 'assets/images/exercises/triangle.png',
+                            
+                          ),
+                        ],
+                      ),  
               ],
             ),
           ),
