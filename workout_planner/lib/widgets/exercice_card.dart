@@ -12,7 +12,7 @@ class ExerciseCard extends StatelessWidget {
     
     required this.title, 
     required this.imageUrl,
-     required this.description
+     required this.description, required Null Function() onTap
      }
      );
 
@@ -55,11 +55,11 @@ class ExerciseCard extends StatelessWidget {
             fit: BoxFit.cover,
             ),
 
-                        SizedBox(height: 5,
+                        SizedBox(height: 10,
             ),
 
              Text(description,
-             style: TextStyle(fontSize: 18,
+             style: TextStyle(fontSize: 16,
             fontWeight: FontWeight.normal,
             color: kMainColor,
             ),
