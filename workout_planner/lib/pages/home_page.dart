@@ -77,6 +77,9 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                  
+                  
+                  //warmup card
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -86,32 +89,30 @@ class _HomePageState extends State<HomePage> {
                                 (context) => ExerciseDetailsPage(
                                   exerciseTitle: 'Warmup',
                                   exerciseDescription:
-                                      "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
+                                       "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
 
                                   exerciseList: exerciseList,
                                 ),
                           ),
                         );
                       },
-
-
-
-
-                      
                       child: GestureDetector(     
                         child: ExerciseCard(
-                          title: 'Equipment',
-                          description: "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
+                          title: 'Warmup',
+                          description: "see more... ",
 
 
-                          imageUrl: 'assets/images/exercises/dumbbells2.png', onTap: () {  },
+                          imageUrl: 'assets/images/exercises/downward-facing.png', onTap: () {  },
                         ),
                         
                       ),
                     ),
 
+
+
+                    //equipment card
                  ExerciseCard(
-                      title: 'Warmup',
+                      title: 'Equipment',
                       description: 'see more...',
                       imageUrl: 'assets/images/equipments/dumbbells2.png', onTap: () {  },
                     ),
@@ -121,15 +122,37 @@ class _HomePageState extends State<HomePage> {
 
 
 
+
+
+             //exercise card
                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ExerciseCard(
-                      title: 'Exercise',
-                      description: 'see more...',
-                      imageUrl: 'assets/images/exercises/dragging.png', onTap: () {  },
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute
+                        (builder:(context) => ExerciseDetailsPage(
+                          exerciseTitle: 'Exercise',
+                          exerciseDescription:
+                              "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
+
+                          exerciseList: exerciseList,
+                        ) ));
+
+                      },
+                      child: ExerciseCard(
+                        onTap: () {  },
+                        title: 'Exercise',
+                        description: 'see more...',
+                        imageUrl: 'assets/images/exercises/dragging.png',
+                      ),
                     ),
 
+
+
+
+
+           //stretching card             
                  GestureDetector(
                   onTap: (){
                     Navigator.push(context,MaterialPageRoute
