@@ -9,8 +9,7 @@ User user = User(
   gender: "Male",
   address: "123 Main St, City, Country",
   description: "Fitness enthusiast",
-  // totalExerciseCompleted: 0,
-  // totalequipmentHandOvered: 0,
+
 
 
   

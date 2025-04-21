@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:intl/intl.dart';
+
 import 'package:workout_planner/constants/colors.dart';
 import 'package:workout_planner/constants/responsive.dart';
 import 'package:workout_planner/data/equipment_data.dart';
 import 'package:workout_planner/data/exercise_data.dart';
 import 'package:workout_planner/data/user_data.dart';
+import 'package:workout_planner/pages/equipments_page.dart';
 import 'package:workout_planner/pages/exercise_details_page.dart';
 import 'package:workout_planner/widgets/progress_card.dart';
 import 'package:workout_planner/widgets/exercice_card.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -61,11 +65,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SizedBox(height: 20),
 
-                ProgressCard(progressValue: 0.4, total: 100),
+                ProgressCard(progressValue: 0.2, total: 100),
 
-                SizedBox(
-                  height: 20
-                  ),
+                SizedBox(height: 20),
 
                 Text(
                   "Todays's Activity",
@@ -77,9 +79,8 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  
-                  
-                  //warmup card
+                    
+                    //warmup card
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -89,92 +90,107 @@ class _HomePageState extends State<HomePage> {
                                 (context) => ExerciseDetailsPage(
                                   exerciseTitle: 'Warmup',
                                   exerciseDescription:
-                                       "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
+                                      "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
 
                                   exerciseList: exerciseList,
                                 ),
                           ),
                         );
                       },
-                      child: GestureDetector(     
+                      child: GestureDetector(
                         child: ExerciseCard(
                           title: 'Warmup',
                           description: "see more... ",
 
-
-                          imageUrl: 'assets/images/exercises/downward-facing.png', onTap: () {  },
+                          imageUrl:
+                              'assets/images/exercises/downward-facing.png',
+                          onTap: () {},
                         ),
-                        
                       ),
                     ),
 
-
-
                     //equipment card
-                 ExerciseCard(
-                      title: 'Equipment',
-                      description: 'see more...',
-                      imageUrl: 'assets/images/equipments/dumbbells2.png', onTap: () {  },
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => EquipmentDetailsPage(
+                                  equipmentTitle: "Equipments",
+                                  equipmentDescription:
+                                      "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
+                                  equipmentList: equipmentList,
+                                ),
+                          ),
+                        );
+                      },
+
+                      child: ExerciseCard(
+                        title: 'Equipment',
+                        description: 'see more...',
+                        imageUrl: 'assets/images/equipments/dumbbells2.png',
+                        onTap: () {},
+                      ),
                     ),
                   ],
                 ),
                 SizedBox(height: 13),
 
-
-
-
-
-             //exercise card
-               Row(
+                //exercise card
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute
-                        (builder:(context) => ExerciseDetailsPage(
-                          exerciseTitle: 'Exercise',
-                          exerciseDescription:
-                              "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => ExerciseDetailsPage(
+                                  exerciseTitle: 'Exercise',
+                                  exerciseDescription:
+                                      "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
 
-                          exerciseList: exerciseList,
-                        ) ));
-
+                                  exerciseList: exerciseList,
+                                ),
+                          ),
+                        );
                       },
                       child: ExerciseCard(
-                        onTap: () {  },
+                        onTap: () {},
                         title: 'Exercise',
                         description: 'see more...',
                         imageUrl: 'assets/images/exercises/dragging.png',
                       ),
                     ),
 
+                    //stretching card
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => ExerciseDetailsPage(
+                                  exerciseTitle: 'Stretching',
+                                  exerciseDescription:
+                                      "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
 
-
-
-
-           //stretching card             
-                 GestureDetector(
-                  onTap: (){
-                    Navigator.push(context,MaterialPageRoute
-                    (builder:(context) => ExerciseDetailsPage(
-                      exerciseTitle: 'Stretching',
-                      exerciseDescription:
-                          "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
-
-                      exerciseList: exerciseList,
-                    ) ));
-                  },
+                                  exerciseList: exerciseList,
+                                ),
+                          ),
+                        );
+                      },
                       child: ExerciseCard(
                         title: 'Stretching',
                         description: 'see more...',
                         imageUrl: 'assets/images/exercises/triangle.png',
-                         onTap: () {  },
+                        onTap: () {},
                       ),
                     ),
                   ],
                 ),
-
-
               ],
             ),
           ),

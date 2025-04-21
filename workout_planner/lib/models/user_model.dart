@@ -33,8 +33,7 @@ final List<Exercise> favExerciseList;
          required this.equipmentList, 
          required this.favExerciseList,
           required this.favEquipmentList,
-          //  required int totalequipmentHandOvered, 
-          //  required int totalExerciseCompleted,  
+        
           }
           );
 }

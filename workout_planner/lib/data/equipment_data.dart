@@ -34,6 +34,7 @@ class EquipmentData {
       handOvered: false,
       noOfCalories: 30,
     ),
+
     Equipment(
       id: 3,
       equipmentName: "Jump Rope",
@@ -44,6 +45,7 @@ class EquipmentData {
       handOvered: false,
       noOfCalories: 12,
     ),
+    
     Equipment(
       id: 4,
       equipmentName: "Kettlebells",
@@ -84,6 +86,7 @@ class EquipmentData {
       handOvered: false,
       noOfCalories: 18,
     ),
+
     Equipment(
       id: 8,
       equipmentName: "Bench",
@@ -94,6 +97,7 @@ class EquipmentData {
       handOvered: false,
       noOfCalories: 28,
     ),
+
     Equipment(
       id: 9,
       equipmentName: "Barbell",
