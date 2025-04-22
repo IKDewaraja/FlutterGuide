@@ -20,7 +20,7 @@ class AddExerciseCard extends StatefulWidget {
     required this.toggleAddExercise,
     required this.isAdded,
     required this.toggleAddFavExercise,
-     required this.isFavourited,
+     required this.isFavourited, required Null Function() toggleAddFavoriteExercise,
   });
 
   @override

@@ -10,13 +10,23 @@ class AddEquipmentCard extends StatefulWidget {
   final String equipmentImageUrl;
   final int noOfMinutes;
   final double noOfCalories;
+  final bool isAddEquipment;
+  final bool isAddFavEquipment;
+
+  final void Function () toggleAddEquipment;
+  final void Function () toggleAddFavEquipment;
+
   const AddEquipmentCard({
     super.key,
      required this.equipmentName,
       required this.equipmentDescription,
        required this.equipmentImageUrl,
         required this.noOfMinutes,
-         required this.noOfCalories
+         required this.noOfCalories, 
+         required this.toggleAddEquipment,
+          required this.isAddEquipment,
+           required this.toggleAddFavEquipment, 
+           required this.isAddFavEquipment
          });
 
   @override
@@ -28,6 +38,7 @@ class _AddEquipmentCardState extends State<AddEquipmentCard> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+  
       margin: EdgeInsets.only(bottom:20),
      
       decoration: BoxDecoration(
@@ -116,10 +127,10 @@ class _AddEquipmentCardState extends State<AddEquipmentCard> {
                     child: Center(
                       child: IconButton(
                         onPressed: () {
-                   
+                          widget.toggleAddEquipment();
                         },
                         icon: Icon(
-                           Icons.add,
+                        widget.isAddEquipment ? Icons.remove : Icons.add,
 
                           color: kMainDarkBlue,
                           size: 30,
@@ -140,10 +151,11 @@ class _AddEquipmentCardState extends State<AddEquipmentCard> {
                     child: Center(
                       child: IconButton(
                         onPressed: () {
+                          widget.toggleAddFavEquipment();
                      
                         },
                         icon: Icon(
-                            Icons.favorite_border,
+                          widget.isAddFavEquipment ? Icons.favorite : Icons.favorite_border,
                           color: kMainPinkColor,
                           size: 30,
                         ),

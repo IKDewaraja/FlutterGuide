@@ -16,7 +16,7 @@ class User {
   final List<Exercise> exerciseList;
   final List<Equipment> equipmentList;
 
-final List<Exercise> favExerciseList;
+  final List<Exercise> favExerciseList;
   final List<Equipment> favEquipmentList;
 
   //constructor
@@ -57,6 +57,27 @@ final List<Exercise> favExerciseList;
           //method to remove fav exercise from the list
           void removeFavExercise(Exercise exercise) {
             favExerciseList.remove(exercise);
+          }
+
+          //method to add new equipment to the list
+        
+          void addEquipment(Equipment equipment) {
+            equipmentList.add(equipment);
+          }
+
+          //method to remove  a equipment from the list
+          void removeEquipment(Equipment equipment) {
+            equipmentList.remove(equipment);
+          }
+
+          //method to add fav equipment to the list
+          void addFavEquipment(Equipment equipment) {
+            favEquipmentList.add(equipment);
+          }
+
+          //method to remove fav equipment from the list
+          void removeFavEquipment(Equipment equipment) {
+            favEquipmentList.remove(equipment);
           }
 
 }
