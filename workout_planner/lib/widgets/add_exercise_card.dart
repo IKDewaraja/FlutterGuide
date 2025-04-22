@@ -7,17 +7,20 @@ class AddExerciseCard extends StatefulWidget {
   final String exerciseImageUrl;
   final int noOfMinutes;
   final bool isAdded;
+  final bool isFavourited;
 
   final void Function() toggleAddExercise;
+  final void Function() toggleAddFavExercise;
 
-const AddExerciseCard({
+  const AddExerciseCard({
     super.key,
     required this.exerciseTitle,
     required this.exerciseImageUrl,
     required this.noOfMinutes,
-     required this.toggleAddExercise, 
-     required this.isAdded, 
- 
+    required this.toggleAddExercise,
+    required this.isAdded,
+    required this.toggleAddFavExercise,
+     required this.isFavourited,
   });
 
   @override
@@ -81,10 +84,11 @@ class _AddExerciseCardState extends State<AddExerciseCard> {
                           widget.toggleAddExercise();
                         },
                         icon: Icon(
-                         widget.isAdded  ? Icons.remove:Icons.add,
-                        
-                         color: kMainDarkBlue,
-                          size: 30),
+                          widget.isAdded ? Icons.remove : Icons.add,
+
+                          color: kMainDarkBlue,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
@@ -100,9 +104,11 @@ class _AddExerciseCardState extends State<AddExerciseCard> {
 
                     child: Center(
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          widget.toggleAddFavExercise();
+                        },
                         icon: Icon(
-                          Icons.favorite_border,
+                        widget.isFavourited  ?  Icons.favorite : Icons.favorite_border,
                           color: kMainPinkColor,
                           size: 30,
                         ),
