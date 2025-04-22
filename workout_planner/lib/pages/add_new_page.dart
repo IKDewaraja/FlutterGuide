@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:workout_planner/constants/colors.dart';
 import 'package:workout_planner/constants/responsive.dart';
+import 'package:workout_planner/data/equipment_data.dart';
 import 'package:workout_planner/data/exercise_data.dart';
 import 'package:workout_planner/data/user_data.dart';
+import 'package:workout_planner/models/equipment_model.dart';
 import 'package:workout_planner/models/exercise_model.dart';
 import 'package:workout_planner/widgets/add_exercise_card.dart';
+import 'package:workout_planner/widgets/add_equipment_card.dart';
 
 class AddNewPage extends StatefulWidget {
   const AddNewPage({super.key});
@@ -19,6 +22,9 @@ class _AddNewPageState extends State<AddNewPage> {
 
   //exercise list
   final exerciseList = ExerciseData().exerciseList;
+
+  //equipment list
+  final equipmentList = EquipmentData().equipmentList;
 
   @override
   Widget build(BuildContext context) {
@@ -83,34 +89,60 @@ class _AddNewPageState extends State<AddNewPage> {
                           setState(() {
                             if (userData.exerciseList.contains(exercise)) {
                               userData.removeExercise(exercise);
-                           //   print(userData.exerciseList.length);
-                            } 
-                            
-                            else {
+                              //   print(userData.exerciseList.length);
+                            } else {
                               userData.addExercise(exercise);
 
-                          //    print(userData.exerciseList.length);
+                              //    print(userData.exerciseList.length);
                             }
                           });
                         },
 
                         //fav exercise
-                        
-                         toggleAddFavExercise: () { 
+                        toggleAddFavExercise: () {
                           setState(() {
-                            
                             if (userData.favExerciseList.contains(exercise)) {
                               userData.removeFavExercise(exercise);
-                         //     print(userData.favExerciseList.length);
-                            } 
-
-                            else {
+                              //     print(userData.favExerciseList.length);
+                            } else {
                               userData.addFavExercise(exercise);
-                           //   print(userData.favExerciseList.length);
+                              //   print(userData.favExerciseList.length);
                             }
                           });
-                          }, 
-                          isFavourited: userData.favExerciseList.contains(exercise),
+                        },
+                        isFavourited: userData.favExerciseList.contains(
+                          exercise,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+
+                SizedBox(height: 15),
+
+                Text(
+                  "All Equipments",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: kMainBlackColor,
+                  ),
+                ),
+                SizedBox(height: 15),
+
+                //list view to scroll vertically
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      Equipment equipment = equipmentList[index];
+                      return AddEquipmentCard(
+                        equipmentName: equipment.equipmentName,
+
+                        equipmentDescription: equipment.equipmentDescription,
+                        equipmentImageUrl: equipment.equipmentImageUrl,
+                        noOfMinutes: equipment.noOfMinutes,
+                        noOfCalories: equipment.noOfCalories,
                       );
                     },
                   ),
