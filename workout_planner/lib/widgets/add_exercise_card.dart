@@ -6,12 +6,18 @@ class AddExerciseCard extends StatefulWidget {
   final String exerciseTitle;
   final String exerciseImageUrl;
   final int noOfMinutes;
+  final bool isAdded;
 
-  const AddExerciseCard({
+  final void Function() toggleAddExercise;
+
+const AddExerciseCard({
     super.key,
     required this.exerciseTitle,
     required this.exerciseImageUrl,
     required this.noOfMinutes,
+     required this.toggleAddExercise, 
+     required this.isAdded, 
+ 
   });
 
   @override
@@ -37,19 +43,15 @@ class _AddExerciseCardState extends State<AddExerciseCard> {
         child: Column(
           children: [
             Text(
-                  widget.exerciseTitle,
+              widget.exerciseTitle,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
-            Image.asset(
-              widget.exerciseImageUrl,
-              fit: BoxFit.cover,
-              width: 100,
-            ),
+            Image.asset(widget.exerciseImageUrl, fit: BoxFit.cover, width: 100),
             SizedBox(height: 10),
 
             Text(
-           "${widget.noOfMinutes.toString()} Minutes.",
+              "${widget.noOfMinutes.toString()} Minutes.",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
@@ -75,8 +77,14 @@ class _AddExerciseCardState extends State<AddExerciseCard> {
 
                     child: Center(
                       child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.add, color: kMainDarkBlue, size: 30),
+                        onPressed: () {
+                          widget.toggleAddExercise();
+                        },
+                        icon: Icon(
+                         widget.isAdded  ? Icons.remove:Icons.add,
+                        
+                         color: kMainDarkBlue,
+                          size: 30),
                       ),
                     ),
                   ),

@@ -6,7 +6,6 @@ import 'package:workout_planner/data/user_data.dart';
 import 'package:workout_planner/models/exercise_model.dart';
 import 'package:workout_planner/widgets/add_exercise_card.dart';
 
-
 class AddNewPage extends StatefulWidget {
   const AddNewPage({super.key});
 
@@ -15,18 +14,15 @@ class AddNewPage extends StatefulWidget {
 }
 
 class _AddNewPageState extends State<AddNewPage> {
-
   //import user from user data
   final userData = user;
 
   //exercise list
   final exerciseList = ExerciseData().exerciseList;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -35,64 +31,69 @@ class _AddNewPageState extends State<AddNewPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-              "Hello, ${userData.fullName}",
+                  "Hello, ${userData.fullName}",
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color:kMainBlackColor,
+                    color: kMainBlackColor,
                   ),
                 ),
 
                 SizedBox(height: 15),
 
-                 Text(
-              "Lets Add Some Workout and Equipment for today!",
+                Text(
+                  "Lets Add Some Workout and Equipment for today!",
                   style: TextStyle(
-                    fontSize:15,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color:kMainColor,
+                    color: kMainColor,
                   ),
                 ),
 
-                
                 SizedBox(height: 15),
 
-                 Text(
-              "All Exercises",
+                Text(
+                  "All Exercises",
                   style: TextStyle(
-                    fontSize:20,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color:kMainBlackColor,
+                    color: kMainBlackColor,
                   ),
                 ),
                 SizedBox(height: 15),
 
                 //list view to scroll horizontally
                 SizedBox(
-                height: MediaQuery.of(context).size.height * 0.332,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                 
-                  itemCount: exerciseList.length,
+                  height: MediaQuery.of(context).size.height * 0.332,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
 
-                  itemBuilder: (context, index) {
-               Exercise exercise =  exerciseList[index];
-                    return AddExerciseCard(
-                      exerciseTitle: exercise.exerciseName,
-                      exerciseImageUrl: exercise.exerciseImageUrl,
-                      noOfMinutes: exercise.noOfMinutes,
-                    );
-                  }, 
+                    itemCount: exerciseList.length,
+
+                    itemBuilder: (context, index) {
+                      Exercise exercise = exerciseList[index];
+                      return AddExerciseCard(
+                        exerciseTitle: exercise.exerciseName,
+                        exerciseImageUrl: exercise.exerciseImageUrl,
+                        noOfMinutes: exercise.noOfMinutes,
+                        isAdded: userData.exerciseList.contains(exercise),
+                        toggleAddExercise: () {
+                          setState(() {
+                            if (userData.exerciseList.contains(exercise)) {
+                              userData.removeExercise(exercise);
+                              print(userData.exerciseList.length);
+                            } 
+                            else {
+                              userData.addExercise(exercise);
+
+                              print(userData.exerciseList.length);
+                            }
+                          });
+                        },
+                      );
+                    },
+                  ),
                 ),
-
-              
-
-        
-
-                ),
-
-
-
               ],
             ),
           ),

@@ -36,4 +36,16 @@ final List<Exercise> favExerciseList;
         
           }
           );
+
+          //methos
+
+          //methos to add new exercise to the list
+          void addExercise(Exercise exercise) {
+            exerciseList.add(exercise);
+          }
+
+          //methos to remove  a exercise from the list
+          void removeExercise(Exercise exercise) {
+            exerciseList.remove(exercise);
+          }
 }
