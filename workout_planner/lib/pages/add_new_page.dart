@@ -171,9 +171,9 @@ class _AddNewPageState extends State<AddNewPage> {
                             userData.addFavEquipment(equipment);
                           }
                           // print(userData.favEquipmentList.length);
-                        });
-  },
-);
+                               });
+                          },
+                        );
                     },
                   ),
                 ),
