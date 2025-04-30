@@ -56,8 +56,8 @@ User user = User(
   
   favExerciseList: [
     Exercise(
-      exerciseName: "Plank",
-      exerciseImageUrl: "assets/images/equipments/dumbbell.png",
+      exerciseName: "Push-ups",
+      exerciseImageUrl: "assets/images/exercises/cobra.png",
       noOfMinutes: 30,
       id: 2,
       completed: false,

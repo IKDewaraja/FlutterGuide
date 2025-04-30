@@ -155,7 +155,9 @@ class _AddEquipmentCardState extends State<AddEquipmentCard> {
                      
                         },
                         icon: Icon(
-                          widget.isAddFavEquipment ? Icons.favorite : Icons.favorite_border,
+                          widget.isAddFavEquipment
+                           ? Icons.favorite 
+                           : Icons.favorite_border,
                           color: kMainPinkColor,
                           size: 30,
                         ),

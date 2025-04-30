@@ -139,6 +139,7 @@ class _AddNewPageState extends State<AddNewPage> {
                   itemCount: equipmentList.length,
                      itemBuilder: (context, index) {
                       Equipment equipment = equipmentList[index];
+                      
                   return AddEquipmentCard(
                       equipmentName: equipment.equipmentName,
                       equipmentDescription: equipment.equipmentDescription,
