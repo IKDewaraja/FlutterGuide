@@ -112,7 +112,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
 
 
 
-     //favourite equipments
+     
 
                  SizedBox(height: 10),
 
@@ -127,7 +127,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
 
                 SizedBox(height: 20),
 
-                //exercise grid view
+                //equipment grid view
                 GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
