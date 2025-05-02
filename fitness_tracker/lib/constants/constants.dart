@@ -1,0 +1,3 @@
+
+
+const kDefaultPaddding = 20;
