@@ -13,13 +13,17 @@ class HomePage extends StatelessWidget {
         child: Row(
           children: [
             //side menu
-            Expanded(flex: 2, child: SizedBox(child: SideMenu())),
+            Expanded(
+              flex: 2, 
+              child: SizedBox(child: SideMenu())),
 
             //Dashboard
-            Expanded(flex: 7, child: SizedBox(child: Dashboard())),
+            Expanded(flex: 7, 
+            child: SizedBox(child: Dashboard())),
 
             //summary section
-            Expanded(flex: 3, child: SizedBox(child: Summary())),
+            Expanded(flex: 3,
+             child: SizedBox(child: Summary())),
           ],
         ),
       ),
