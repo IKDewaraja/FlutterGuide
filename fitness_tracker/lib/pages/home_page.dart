@@ -12,11 +12,8 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Row(
           children: [
-            //sidd emenu
-            Expanded(
-              flex: 2,
-              child: SizedBox(child: SideMenu(icon: Icons.menu, title: 'Menu')),
-            ),
+            //side menu
+            Expanded(flex: 2, child: SizedBox(child: SideMenu())),
 
             //Dashboard
             Expanded(flex: 7, child: SizedBox(child: Dashboard())),

@@ -7,3 +7,4 @@ const backgroundColor = Color.fromARGB(255, 30, 29, 29);
 const sectionColor = Colors.purpleAccent;
 const limeColor = Colors.blueGrey;
 const greyColor = Colors.grey;
+const blackColor = Colors.black;
