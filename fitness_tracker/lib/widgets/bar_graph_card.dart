@@ -1,4 +1,5 @@
 
+import 'package:fitness_tracker/utils/responsive.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,8 @@ class BarGraphCard extends StatelessWidget {
 
     //BAR GRAPH DARA
     final  barGraphData =BarGraphData();
+  final bool isMobile = Responsive.isMobile(context);
+
     return GridView.builder(
       shrinkWrap: true,
       physics: ScrollPhysics(),
@@ -26,10 +29,10 @@ class BarGraphCard extends StatelessWidget {
 
       itemCount: barGraphData.data.length,
 
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
 
 
-        crossAxisCount: 3,
+        crossAxisCount: isMobile ? 2 : 3,
         childAspectRatio: 5/4,
         crossAxisSpacing: 15,
         mainAxisSpacing: 12,
