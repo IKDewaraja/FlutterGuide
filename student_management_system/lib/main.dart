@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
 
    List screens = [
     CreatePage(),
-     ReadPage(),
+    ReadPage(),
     DeletePage(),
   ];
   @override
